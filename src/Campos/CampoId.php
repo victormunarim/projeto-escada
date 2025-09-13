@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Victor\ProjetoEscada;
+namespace Victor\ProjetoEscada\Campos;
 
-class CampoNome
+class CampoId
 {
-    private const NOME_LABEL = 'Nome';
+    private const NOME_LABEL = 'ID';
 
-    private const NOME_NAME = 'buscaNome';
+    private const NOME_NAME = 'pesq[id]';
 
     public function render(): string
     {
@@ -22,8 +22,7 @@ class CampoNome
         $placeholderSeguro = htmlspecialchars(self::NOME_LABEL);
 
         $html = sprintf(
-            '<input type="search" name="%s" placeholder="%s" value="%s">
-         <button type="submit">Buscar</button>',
+            '<input type="search" name="%s" placeholder="%s" value="%s">',
             self::NOME_NAME,
             $placeholderSeguro,
             $valorBusca
